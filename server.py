@@ -45,15 +45,8 @@ def process_money():
     print(request.form['building'])
     
     if request.form['building'] == "farm":
-
         session['totalGold'] += session['farm']
-        
-        print("farm:", session['farm'])
-        print("new total gold:", session['totalGold'])
-
         session['activities'] = ('Earned', session['farm'], 'gold from farm')   
-      
-
         session['farm'] = random.randrange(10, 21) 
 
     if request.form['building'] == "cave":
